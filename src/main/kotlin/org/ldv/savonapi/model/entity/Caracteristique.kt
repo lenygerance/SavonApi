@@ -11,8 +11,10 @@ class Caracteristique(
     var nom:String,
 
     @OneToMany(mappedBy = "caracteristique")
-    var mention: MutableList<Mention>? = null
+    var mention: MutableList<Mention>? = null,
 
+    @OneToMany(mappedBy = "caracteristique")
+    var resultat: MutableList<Resultat>? = null
 
 
 ) {

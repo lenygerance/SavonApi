@@ -8,6 +8,12 @@ class Role(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var roleId: Long,
-    var description: String
+    var description: String,
+
+    @ManyToOne
+    @JoinColumn(name ="utilisateurId")
+    var utilisateur: Utilisateur? = null,
+
+
 ) {
 }

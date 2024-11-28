@@ -18,5 +18,8 @@ class Ingredient (
     var durete: Float,
     var solubilite: Float,
     var sechage: Float,
+
+    @OneToMany(mappedBy = "ingrediant")
+    var ligne: MutableList<Ligne>? = null,
 ){
 }

@@ -12,7 +12,11 @@ class Utilisateur(
     var prenom : String,
     var pseudo : String,
 
+    @OneToMany(mappedBy = "utilisateurId")
+    var recette: MutableList<Recette>? = null,
 
+    @OneToMany(mappedBy = "roleId")
+    var role: MutableList<Role>? = null,
 
     ) {
     fun login():Boolean{
