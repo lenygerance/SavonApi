@@ -10,6 +10,7 @@ class Ligne(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var ligneId: Long,
     var quantite: Float,
+    var pourcentage: Float,
 
     @ManyToOne
     @JoinColumn(name ="ingredientId")

@@ -18,8 +18,8 @@ class DataInitializer(
     override fun run(vararg args: String?) {
         //Pour importer les ingredients
         if (ingredientDAO.count() == 0L) { // Éviter les doublons
-            var huileOlive=  Ingredient(1,"Huile d'olive",9.26f,10.192f,9.838f,9.152f,10.144f,9.298f,10.194f)
-            var huileCoco=  Ingredient(2,"Huile de Coco",7.74f,14.462f,13.356f,9.560f,9.560f,11.204f,11.880f)
+            var huileOlive=  Ingredient(1,"Huile d'olive",9.26f,10.192f,9.838f,9.152f,10.144f,9.298f,10.194f,248f,9f,257f)
+            var huileCoco=  Ingredient(2,"Huile de Coco",7.74f,14.462f,13.356f,9.560f,9.560f,11.204f,11.880f,111f,78f,189f)
 
             var ingredients= listOf<Ingredient>(huileOlive,huileCoco)
             ingredientDAO.saveAll(ingredients)

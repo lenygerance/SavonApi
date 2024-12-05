@@ -8,7 +8,7 @@ class Resultat(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var resultatId: Long,
-    var score: Long,
+    var score: Float,
 
     @ManyToOne
     @JoinColumn(name ="recetteId")

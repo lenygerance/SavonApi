@@ -18,8 +18,11 @@ class Ingredient (
     var durete: Float,
     var solubilite: Float,
     var sechage: Float,
+    var ins: Float,
+    var iode: Float,
+    var sapo: Float,
 
     @OneToMany(mappedBy = "ingrediant")
-    var ligne: MutableList<Ligne>? = null,
+    var ligne: MutableList<Ligne> = mutableListOf()
 ){
 }
