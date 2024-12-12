@@ -86,7 +86,7 @@ class RecetteTests (
         savon.calculScoreNonPondere()
 
         val iode = savon.resultats.find { it.caracteristique?.nom == "iode" }?.score!!
-        val ins = savon.resultats.find { it.caracteristique?.nom == "Indice INS" }?.score!!
+        val ins = savon.resultats.find { it.caracteristique?.nom == "ins" }?.score!!
 
         assertEquals(43.5f, iode, 0.1f, "Le score iode doit être correct")
         assertEquals(179.5f, ins, 0.1f, "Le score INS doit être correct")
