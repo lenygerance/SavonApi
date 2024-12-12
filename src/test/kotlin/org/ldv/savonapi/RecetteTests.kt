@@ -27,6 +27,7 @@ class RecetteTests (
         val huileCoco = ingredientDAO.findById(1).get()
         val huileOlive = ingredientDAO.findById(2).get()
 
+
         val iode = caracteristiqueDAO.findById(1).get()
         val ins = caracteristiqueDAO.findById(2).get()
         val douceur = caracteristiqueDAO.findById(3).get()
@@ -98,11 +99,11 @@ class RecetteTests (
 
         val douceur = savon.resultats.find { it.caracteristique?.nom == "douceur" }?.score!!
         val lavant = savon.resultats.find { it.caracteristique?.nom == "lavant" }?.score!!
-        val volMousse = savon.resultats.find { it.caracteristique!!.nom == "vol moussant" }?.score!!
-        val tenueMousse = savon.resultats.find { it.caracteristique!!.nom == "tenue moussant" }?.score!!
-        val durete = savon.resultats.find { it.caracteristique!!.nom == "dureté" }?.score!!
-        val solubilite = savon.resultats.find { it.caracteristique!!.nom == "solubilité" }?.score!!
-        val sechage = savon.resultats.find { it.caracteristique!!.nom == "séchage" }?.score!!
+        val volMousse = savon.resultats.find { it.caracteristique?.nom == "volmousse" }?.score!!
+        val tenueMousse = savon.resultats.find { it.caracteristique?.nom == "tenuemousse" }?.score!!
+        val durete = savon.resultats.find { it.caracteristique?.nom == "dureté" }?.score!!
+        val solubilite = savon.resultats.find { it.caracteristique?.nom == "solubilité" }?.score!!
+        val sechage = savon.resultats.find { it.caracteristique?.nom == "sechage" }?.score!!
 
         assertEquals(9.138174f, douceur, 0.001f, "Le score douceur doit être correct")
         assertEquals(11.585531f, lavant, 0.001f, "Le score lavant doit être correct")

@@ -30,7 +30,7 @@ class Recette (
 
     ){
     fun calculQteAlcalin(){
-        var qteAlcalinNormal: Float= 0.0f
+        var qteAlcalinNormal: Float
         if (typeAlcalin=="soude"){
             qteAlcalinNormal = this.ligne.sumOf{ ligne: Ligne ->  ligne.quantite.toDouble()*ligne.ingredient!!.sapo*(40.0/56/1000)}.toFloat()
         }
@@ -65,13 +65,13 @@ class Recette (
         var solubilite =this.ligne.sumOf { it.ingredient!!.solubilite.toDouble() * it.pourcentage / 100 }
         var sechage =this.ligne.sumOf { it.ingredient!!.sechage.toDouble() * it.pourcentage / 100 }
 
-        douceur = douceur * (1 + 0.01494 * surgraissage)
-        lavant = lavant * (1 + -0.01203 * surgraissage)
-        volmousse = volmousse * (1 + -0.00702 * surgraissage)
-        tenuemousse = tenuemousse * (1 + 0.01016 * surgraissage)
-        durete = durete * (1 + -0.00602 * surgraissage)
-        solubilite = solubilite * (1 + 0.00250 * surgraissage)
-        sechage = sechage * (1 + -0.00503 * surgraissage);
+        douceur *= (1 + 0.01494 * surgraissage)
+        lavant *= (1 + -0.01203 * surgraissage)
+        volmousse *= (1 + -0.00702 * surgraissage)
+        tenuemousse *= (1 + 0.01016 * surgraissage)
+        durete *= (1 + -0.00602 * surgraissage)
+        solubilite *= (1 + 0.00250 * surgraissage)
+        sechage *= (1 + -0.00503 * surgraissage)
 
         this.resultats.find { it.caracteristique!!.nom=="douceur" }!!.score=douceur.toFloat()
         this.resultats.find { it.caracteristique!!.nom=="lavant" }!!.score=lavant.toFloat()
@@ -80,13 +80,6 @@ class Recette (
         this.resultats.find { it.caracteristique!!.nom=="durete" }!!.score=durete.toFloat()
         this.resultats.find { it.caracteristique!!.nom=="solubilite" }!!.score=solubilite.toFloat()
         this.resultats.find { it.caracteristique!!.nom=="sechage" }!!.score=sechage.toFloat()
-
-
-
-
-
-
-
 
     }
 }
