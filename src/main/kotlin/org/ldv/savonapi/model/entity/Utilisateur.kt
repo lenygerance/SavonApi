@@ -12,10 +12,10 @@ class Utilisateur(
     var prenom : String,
     var pseudo : String,
 
-    @OneToMany(mappedBy = "utilisateurId")
+    @OneToMany(mappedBy = "utilisateur")
     var recette: MutableList<Recette>? = null,
 
-    @OneToMany(mappedBy = "roleId")
+    @OneToMany(mappedBy = "utilisateur")
     var role: MutableList<Role>? = null,
 
     ) {

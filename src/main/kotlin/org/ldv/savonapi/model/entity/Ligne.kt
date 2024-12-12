@@ -1,21 +1,23 @@
 package org.ldv.savonapi.model.entity
 
 import jakarta.persistence.*
+import org.ldv.savonapi.model.id.LigneId
 
 
 @Entity
 @Table(name = "ligne")
 class Ligne(
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var ligneId: Long,
+    @EmbeddedId
+    var ligneId: LigneId? = null,
     var quantite: Float,
     var pourcentage: Float,
 
+    @MapsId("ingredientId")
     @ManyToOne
     @JoinColumn(name ="ingredientId")
     var ingredient: Ingredient? = null,
 
+    @MapsId("recetteId")
     @ManyToOne
     @JoinColumn(name ="recetteId")
     var recette: Recette? = null,

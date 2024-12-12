@@ -5,6 +5,7 @@ import org.ldv.savonapi.model.entity.Recette
 import org.ldv.savonapi.service.SimulateurService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.CrossOrigin
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @CrossOrigin
-@RequestMapping("api-savon/v1/ingredient")
+@RequestMapping("api-savon/v1/recette")
 class RecetteController (
     val simulateurService: SimulateurService,
     val recetteDAO: RecetteDAO
@@ -27,7 +28,7 @@ class RecetteController (
         }
     }
 
-    @GetMapping("/{id}")
+    @DeleteMapping("/{id}")
     fun delete(@PathVariable id: Long): ResponseEntity<Void> {
         return if (recetteDAO.existsById(id)) {
             recetteDAO.deleteById(id)

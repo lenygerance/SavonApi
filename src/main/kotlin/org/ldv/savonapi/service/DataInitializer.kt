@@ -26,16 +26,16 @@ class DataInitializer(
     }
     // Pour importer les caracteristiques...
         if (caracteristiqueDAO.count() == 0L) {
-            var saponification =  Caracteristique(1,"Saponification")
-            var iode =  Caracteristique(2,"Iode")
-            var ins = Caracteristique(3,"INS")
-            var douceur = Caracteristique(4,"Douceur")
-            var lavant = Caracteristique(5,"Lavant")
-            var volmoussant = Caracteristique(6,"Vol moussant")
-            var tenuemoussant = Caracteristique(7,"Tenue moussant")
-            var durete = Caracteristique(8,"Dureté")
-            var solubilite = Caracteristique(9,"Solubilité")
-            var sechage = Caracteristique(10,"Sechage")
+            var saponification =  Caracteristique(1,"saponification")
+            var iode =  Caracteristique(2,"iode")
+            var ins = Caracteristique(3,"ins")
+            var douceur = Caracteristique(4,"douceur")
+            var lavant = Caracteristique(5,"lavant")
+            var volmoussant = Caracteristique(6,"vol moussant")
+            var tenuemoussant = Caracteristique(7,"tenue moussant")
+            var durete = Caracteristique(8,"dureté")
+            var solubilite = Caracteristique(9,"solubilité")
+            var sechage = Caracteristique(10,"sechage")
 
 
             var caracteristique= listOf<Caracteristique>(saponification,iode,ins,douceur,lavant,volmoussant,tenuemoussant,durete,solubilite,sechage)

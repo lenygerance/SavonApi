@@ -22,7 +22,7 @@ class Ingredient (
     var iode: Float,
     var sapo: Float,
 
-    @OneToMany(mappedBy = "ingrediant")
+    @OneToMany(mappedBy = "ingredient")
     var ligne: MutableList<Ligne> = mutableListOf()
 ){
 }
